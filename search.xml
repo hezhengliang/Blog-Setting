@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hexo + GitPage]]></title>
-    <url>%2F2019%2F04%2F14%2Ffirstnote%2F</url>
-    <content type="text"><![CDATA[Hexo + GitPage]]></content>
+    <title><![CDATA[Will Fine, And You!]]></title>
+    <url>%2F2019%2F04%2F15%2F20190415-%E6%97%A5%E5%B8%B8%E9%9A%8F%E7%AC%94%2F</url>
+    <content type="text"><![CDATA[Will you date me ? Breath if yes.]]></content>
+      <categories>
+        <category>日常随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql索引]]></title>
+    <url>%2F2019%2F04%2F15%2Fmysql%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[tag-js]]></title>
+    <url>%2F2019%2F04%2F15%2Ftag-js%2F</url>
+    <content type="text"></content>
+      <tags>
+        <tag>js</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[phptos]]></title>
@@ -11,8 +30,11 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[category]]></title>
-    <url>%2F2019%2F04%2F14%2Fcategories%2F</url>
+    <title><![CDATA[首个测试分类]]></title>
+    <url>%2F2019%2F04%2F14%2F%E5%88%86%E7%B1%BB%2F</url>
     <content type="text"><![CDATA[分类]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
   </entry>
 </search>

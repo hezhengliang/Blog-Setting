@@ -5,7 +5,7 @@
     <url>%2F2019%2F05%2F26%2Fjs%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96%2F</url>
     <content type="text"><![CDATA[Js正则时间格式化 数字字符串格式转datetime格式 let timeStr = ‘20190526153600’timeStr = timeStr.replace(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/, ‘$1-$2-$3 $4:$5:%6’)console.log(timeStr) //- - 2019-05-25 15:36:00 含有汉字的时间格式提取为【yyyy-mm-dd】 let dtDate = ‘2019年05月26日 15:40:23’dtDate = dtDate.replace(/(\d{4}).(\d{1,2}).(\d{1,2}).+/mg, ‘$1-$2-$3’)console.log(dtDate) //- - 2019-05-26 含有汉字的时间格式提取为【yyyymmdd】 let dtData = ‘2019年05月26日 15:40:23’dtDate = dtDate.replace(/[^[0-9]]/mg,’’).match(/.\d{8}/)console.log(dtDate) //- - 20190526]]></content>
       <tags>
-        <tag>JaveScript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>

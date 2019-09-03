@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Base64 Convert]]></title>
+    <url>%2F2019%2F09%2F13%2FBase64ConvertImage%2F</url>
+    <content type="text"><![CDATA[JS实现Base64转化为Png/Jpg,并保存至本地const ConvertBase64ToImage = (saveName, b64Info, contType) =&gt; { /** base64文件流并保存到本地png/jpg*/ const b64toBlob = (b64Data, contentType = &quot;image/png&quot;, sliceSize = 512) =&gt; { //-- parse base64 string const byteCharacters = window.atob(b64Data); const byteArrays = []; for (let offset = 0; offset &lt; byteCharacters.length; offset += sliceSize) { const slice = byteCharacters.slice(offset, offset + sliceSize); const byteNumbers = new Array(slice.length); for (let i = 0; i &lt; slice.length; i++) { byteNumbers[i] = slice.charCodeAt(i); } //-- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array const byteArray = new Uint8Array(byteNumbers); byteArrays.push(byteArray); } //-- https://developer.mozilla.org/zh-CN/docs/Web/API/Blob const blob = new Blob(byteArrays, { type: contentType }); return blob; } const blob = b64toBlob(b64Info, contType); //-- https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL //-- URL.createObjectURL() 静态方法会创建一个 DOMString const blobUrl = URL.createObjectURL(blob); // return let aLink = document.createElement(&quot;a&quot;); let evt = document.createEvent(&quot;HTMLEvents&quot;); //-- initEvent 不加后两个参数在FF下会报错 事件类型，是否冒泡，是否阻止浏览器的默认行为 evt.initEvent(&quot;click&quot;, true, true); aLink.download = saveName; aLink.href = blobUrl; aLink.click(); } export default ConvertBase64ToImage; 参考资料： https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/ https://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS时间正则格式化]]></title>
     <url>%2F2019%2F05%2F26%2Fjs%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%8C%96%2F</url>
     <content type="text"><![CDATA[Js正则时间格式化 数字字符串格式转datetime格式 let timeStr = ‘20190526153600’timeStr = timeStr.replace(/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/, ‘$1-$2-$3 $4:$5:%6’)console.log(timeStr) //- - 2019-05-25 15:36:00 含有汉字的时间格式提取为【yyyy-mm-dd】 let dtDate = ‘2019年05月26日 15:40:23’dtDate = dtDate.replace(/(\d{4}).(\d{1,2}).(\d{1,2}).+/mg, ‘$1-$2-$3’)console.log(dtDate) //- - 2019-05-26 含有汉字的时间格式提取为【yyyymmdd】 let dtData = ‘2019年05月26日 15:40:23’dtDate = dtDate.replace(/[^[0-9]]/mg,’’).match(/.\d{8}/)console.log(dtDate) //- - 20190526]]></content>

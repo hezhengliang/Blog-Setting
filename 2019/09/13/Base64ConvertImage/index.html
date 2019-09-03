@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="JS实现Base64转化为Png/Jpg,并保存至本地const ConvertBase64ToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
+  <meta name="description" content="JS实现Base64转化为Png/Jpg,并保存至本地const Base64ConvertToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Base64 Convert To Image">
 <meta property="og:url" content="http://yoursite.com/2019/09/13/Base64ConvertImage/index.html">
 <meta property="og:site_name" content="ErYi Echo">
-<meta property="og:description" content="JS实现Base64转化为Png/Jpg,并保存至本地const ConvertBase64ToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
+<meta property="og:description" content="JS实现Base64转化为Png/Jpg,并保存至本地const Base64ConvertToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-03T13:58:12.350Z">
+<meta property="og:updated_time" content="2019-09-03T14:42:33.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Base64 Convert To Image">
-<meta name="twitter:description" content="JS实现Base64转化为Png/Jpg,并保存至本地const ConvertBase64ToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
+<meta name="twitter:description" content="JS实现Base64转化为Png/Jpg,并保存至本地const Base64ConvertToImage = (saveName, b64Info, contType) =&amp;gt; { /** base64文件流并保存到本地png/jpg*/    const b64toBlob = (b64Data, contentType = &amp;quot;image/png&amp;quot;, sliceSize">
 
 
 
@@ -401,7 +401,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-03 21:58:12" itemprop="dateModified" datetime="2019-09-03T21:58:12+08:00">2019-09-03</time>
+                <time title="修改时间：2019-09-03 22:42:33" itemprop="dateModified" datetime="2019-09-03T22:42:33+08:00">2019-09-03</time>
               
             
           </span>
@@ -435,7 +435,7 @@
       
 
       
-        <h1 id="JS实现Base64转化为Png-Jpg-并保存至本地"><a href="#JS实现Base64转化为Png-Jpg-并保存至本地" class="headerlink" title="JS实现Base64转化为Png/Jpg,并保存至本地"></a>JS实现Base64转化为Png/Jpg,并保存至本地</h1><pre><code>const ConvertBase64ToImage = (saveName, b64Info, contType) =&gt; { /** base64文件流并保存到本地png/jpg*/
+        <h1 id="JS实现Base64转化为Png-Jpg-并保存至本地"><a href="#JS实现Base64转化为Png-Jpg-并保存至本地" class="headerlink" title="JS实现Base64转化为Png/Jpg,并保存至本地"></a>JS实现Base64转化为Png/Jpg,并保存至本地</h1><pre><code>const Base64ConvertToImage = (saveName, b64Info, contType) =&gt; { /** base64文件流并保存到本地png/jpg*/
    const b64toBlob = (b64Data, contentType = &quot;image/png&quot;, sliceSize = 512) =&gt; {
    //-- parse base64 string
    const byteCharacters = window.atob(b64Data);
@@ -458,16 +458,16 @@
    //-- https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL
    //-- URL.createObjectURL() 静态方法会创建一个 DOMString
    const blobUrl = URL.createObjectURL(blob);
-   // return
-   let aLink = document.createElement(&quot;a&quot;);
-   let evt = document.createEvent(&quot;HTMLEvents&quot;);
-   //-- initEvent 不加后两个参数在FF下会报错  事件类型，是否冒泡，是否阻止浏览器的默认行为
+
+   const aEle = document.createElement(&quot;a&quot;);
+   const evt = document.createEvent(&quot;HTMLEvents&quot;);
+   //-- 初始化，事件类型，是否冒泡，是否阻止浏览器的默认行为
    evt.initEvent(&quot;click&quot;, true, true);
-   aLink.download = saveName;
-   aLink.href = blobUrl;
-   aLink.click();
+   aEle.download = saveName;
+   aEle.href = blobUrl;
+   aEle.click();
  }
-export default ConvertBase64ToImage;
+export default Base64ConvertToImage;
 </code></pre><p>  参考资料：</p>
 <pre><code>https://www.zhangxinxu.com/wordpress/2018/08/js-base64-atob-btoa-encode-decode/
 

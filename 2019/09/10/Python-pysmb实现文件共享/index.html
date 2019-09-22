@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="ErYi Echo">
 <meta property="og:description" content="pysmb is an experimental SMB/CIFS library written in Python pip进行pysmb安装  pip install pysmb   pysmb详细功能属性请参照官方文档  实例代码如下 from smb.SMBConnection import SMBConnection import socket def main():     serve">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-10T15:17:02.000Z">
+<meta property="og:updated_time" content="2019-09-22T08:30:49.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-pysmb实现文件共享">
 <meta name="twitter:description" content="pysmb is an experimental SMB/CIFS library written in Python pip进行pysmb安装  pip install pysmb   pysmb详细功能属性请参照官方文档  实例代码如下 from smb.SMBConnection import SMBConnection import socket def main():     serve">
@@ -384,12 +384,24 @@
                 
               
 
-              <time title="创建时间：2019-09-10 22:46:38 / 修改时间：23:17:02" itemprop="dateCreated datePublished" datetime="2019-09-10T22:46:38+08:00">2019-09-10</time>
+              <time title="创建时间：2019-09-10 22:46:38" itemprop="dateCreated datePublished" datetime="2019-09-10T22:46:38+08:00">2019-09-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-22 16:30:49" itemprop="dateModified" datetime="2019-09-22T16:30:49+08:00">2019-09-22</time>
               
             
           </span>
@@ -445,7 +457,7 @@ def main():
                 use_ntlm_v2=True,
                 sign_options=SMBConnection.SIGN_WHEN_SUPPORTED,
                 is_direct_tcp=True)
-    # tcp port: 445 || http port: 129
+    # tcp port: 445 || NetBIOS port: 139
     connected = conn.connect(server_name, 445)
 
     # getAttributes(service_name, path, timeout=30)
@@ -454,6 +466,9 @@ def main():
 
     #file_obj = tempfile.NamedTemporaryFile()
     #file_attributes, filesize = conn.retrieveFile(&apos;smbtest&apos;, &apos;/rfc1001.txt&apos;, file_obj)
+
+if &apos;__name__&apos; == &apos;__main__&apos;:
+    main()
 </code></pre></li>
 </ul>
 

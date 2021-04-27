@@ -103,12 +103,13 @@
 <meta property="og:site_name" content="ErYi Echo">
 <meta property="og:description" content="Vue3-Vite批量注册全局组件 项目目录如下所示  在公共全局组件目录下建立入口文件，添加方法 1234567891011121314export default function registerComponent(app)&amp;#123;  const modules = import.meta.globEager(&amp;apos;./*.vue&amp;apos;)  for (const path i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2021/04/27/Vue3-Vite批量注册全局组件/51619335900_.pic_hd.jpg">
-<meta property="og:updated_time" content="2021-04-27T14:21:10.239Z">
+<meta property="og:image" content="https://i.loli.net/2021/04/27/Mpjvud46zGH39la.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/04/27/cBSRAtkiI1wjDLW.png">
+<meta property="og:updated_time" content="2021-04-27T14:54:47.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue3-Vite批量注册全局组件">
 <meta name="twitter:description" content="Vue3-Vite批量注册全局组件 项目目录如下所示  在公共全局组件目录下建立入口文件，添加方法 1234567891011121314export default function registerComponent(app)&amp;#123;  const modules = import.meta.globEager(&amp;apos;./*.vue&amp;apos;)  for (const path i">
-<meta name="twitter:image" content="http://yoursite.com/2021/04/27/Vue3-Vite批量注册全局组件/51619335900_.pic_hd.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2021/04/27/Mpjvud46zGH39la.jpg">
 
 
 
@@ -385,7 +386,7 @@
                 
               
 
-              <time title="创建时间：2021-04-27 22:02:28 / 修改时间：22:21:10" itemprop="dateCreated datePublished" datetime="2021-04-27T22:02:28+08:00">2021-04-27</time>
+              <time title="创建时间：2021-04-27 22:02:28 / 修改时间：22:54:47" itemprop="dateCreated datePublished" datetime="2021-04-27T22:02:28+08:00">2021-04-27</time>
             
 
             
@@ -425,16 +426,16 @@
 
       
         <h1 id="Vue3-Vite批量注册全局组件"><a href="#Vue3-Vite批量注册全局组件" class="headerlink" title="Vue3-Vite批量注册全局组件"></a>Vue3-Vite批量注册全局组件</h1><ul>
-<li><p>项目目录如下所示<br><img src="//yoursite.com/2021/04/27/Vue3-Vite批量注册全局组件/51619335900_.pic_hd.jpg" alt="项目文件结构图"></p>
+<li><p>项目目录如下所示<br><img src="https://i.loli.net/2021/04/27/Mpjvud46zGH39la.jpg" alt="项目文件结构图"></p>
 </li>
 <li><p>在公共全局组件目录下建立入口文件，添加方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">export default function registerComponent(app)&#123;</span><br><span class="line">  const modules = import.meta.globEager(&apos;./*.vue&apos;)</span><br><span class="line">  for (const path in modules)&#123;</span><br><span class="line">    const componentName = changeStr(</span><br><span class="line">      path.replace(/^\.\//, &apos;&apos;).replace(/\.\w+$/, &apos;&apos;)</span><br><span class="line">    )</span><br><span class="line">    const config = modules[path].default || config</span><br><span class="line">    app.component(componentName, config)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function changeStr(str)&#123;</span><br><span class="line">  return str.charAt(0).toUpperCase() + str.slice(1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
-<li>在main.js中引入公用全局组件注册方法</li>
-</ul>
+<li><p>在main.js中引入公用全局组件注册方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createApp &#125; from &apos;vue&apos;</span><br><span class="line">import App from &apos;./App.vue&apos;</span><br><span class="line">import global from &apos;@/components/common&apos;</span><br><span class="line">const app = createApp(App)</span><br><span class="line">global(app)</span><br><span class="line">app.mount(&apos;#app&apos;)</span><br></pre></td></tr></table></figure>
+<p>测试结果如下：<br><img src="https://i.loli.net/2021/04/27/cBSRAtkiI1wjDLW.png" alt="导入组件结果图"></p>
+</li>
+</ul>
 
       
     </div>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue3-Vite批量注册全局组件]]></title>
+    <url>%2F2021%2F04%2F27%2FVue3-Vite%E6%89%B9%E9%87%8F%E6%B3%A8%E5%86%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Vue3-Vite批量注册全局组件 项目目录如下所示 在公共全局组件目录下建立入口文件，添加方法 1234567891011121314export default function registerComponent(app)&#123; const modules = import.meta.globEager(&apos;./*.vue&apos;) for (const path in modules)&#123; const componentName = changeStr( path.replace(/^\.\//, &apos;&apos;).replace(/\.\w+$/, &apos;&apos;) ) const config = modules[path].default || config app.component(componentName, config) &#125;&#125;function changeStr(str)&#123; return str.charAt(0).toUpperCase() + str.slice(1);&#125; 在main.js中引入公用全局组件注册方法 123456import &#123; createApp &#125; from &apos;vue&apos;import App from &apos;./App.vue&apos;import global from &apos;@/components/common&apos;const app = createApp(App)global(app)app.mount(&apos;#app&apos;)]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Python-pysmb实现文件共享]]></title>
     <url>%2F2019%2F09%2F10%2FPython-pysmb%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%2F</url>
     <content type="text"><![CDATA[pysmb is an experimental SMB/CIFS library written in Python pip进行pysmb安装 pip install pysmb pysmb详细功能属性请参照官方文档 实例代码如下 from smb.SMBConnection import SMBConnection import socket def main(): server_name = socket.getfqdn(address_ip) # server_name should match the remote machine name, or else the connection will be rejected conn = SMBConnection(username, password, &apos;func_handle&apos;, server_name, domain, use_ntlm_v2=True, sign_options=SMBConnection.SIGN_WHEN_SUPPORTED, is_direct_tcp=True) # tcp port: 445 || NetBIOS port: 139 connected = conn.connect(server_name, 445) # getAttributes(service_name, path, timeout=30) # list share files # listPath(service_name, path, search=65591, pattern=&apos;*&apos;, timeout=30) #file_obj = tempfile.NamedTemporaryFile() #file_attributes, filesize = conn.retrieveFile(&apos;smbtest&apos;, &apos;/rfc1001.txt&apos;, file_obj) if &apos;__name__&apos; == &apos;__main__&apos;: main()]]></content>
